@@ -54,11 +54,10 @@ This is a simple web application built with Flask (Python) that generates strong
 
 4.  **Copy password:** Click the "Copy" button to copy the generated password to your clipboard.
 
-## Project Structure 
+## Project Screenshot  
 
-strong-password-generator/
-├── main.py          # Main Flask application
-├── templates/      # HTML templates
-│   └── index.html  # Main HTML file
-└── static/         # Static files (CSS)
-└── rudra.css   # CSS stylesheet
+
+
+![Screenshot 2025-02-01 165035](https://github.com/user-attachments/assets/20b85875-d942-4ba6-93cb-f2e6115c715e)
+
+
