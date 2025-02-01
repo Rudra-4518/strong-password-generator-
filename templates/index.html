@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Strong Password Generator</title>
+</head>
+<body>
+    <h1>Strong Password Generator</h1>
+    <form method="POST">
+        <label for="length">Length:</label>
+        <input type="number" name="length" id="length" value="12" min="1"><br><br>
+
+        <input type="checkbox" name="uppercase" id="uppercase" checked>
+        <label for="uppercase">Uppercase</label><br>
+
+        <input type="checkbox" name="lowercase" id="lowercase" checked>
+        <label for="lowercase">Lowercase</label><br>
+
+        <input type="checkbox" name="digits" id="digits" checked>
+        <label for="digits">Digits</label><br>
+
+        <input type="checkbox" name="symbols" id="symbols">
+        <label for="symbols">Symbols</label><br><br>
+
+        <input type="submit" value="Generate">
+    </form>
+
+    {% if password %}
+        <h2>Generated Password:</h2>
+        <p>{{ password }}</p>
+    {% endif %}
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Password Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='rudra.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Strong Password Generator</h1>
+        <form method="POST">
+            <label for="length">Length:</label>
+            <input type="number" name="length" id="length" value="12" min="1"><br><br>
+
+            <input type="checkbox" name="uppercase" id="uppercase" checked>
+             Uppercase<br> <br>  
+
+            <input type="checkbox" name="lowercase" id="lowercase" checked>
+             Lowercase<br> <br>
+
+            <input type="checkbox" name="digits" id="digits" checked>
+             Digits<br> <br>
+
+            <input type="checkbox" name="symbols" id="symbols">
+             Symbols<br> <br>
+
+            <input type="submit" value="Generate">
+        </form>
+
+        {% if password %}
+            <h2>Generated Password:</h2>
+            <p id="generated-password">{{ password }}</p>
+            <button id="copy-button">Copy</button>
+
+        {% endif %}
+    </div>
+    <script>
+        const copyButton = document.getElementById('copy-button');
+        const generatedPassword = document.getElementById('generated-password');
+
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(generatedPassword.textContent)
+                .then(() => {
+                    copyButton.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyButton.textContent = 'Copy';
+                    }, 2000); // Reset button text after 2 seconds
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                    generatedPassword.textContent = "Error copying. Please copy manually."
+                });
+        });
+    </script>
+
+</body>
+</html>
