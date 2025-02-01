@@ -20,7 +20,7 @@ This is a simple web application built with Flask (Python) that generates strong
 
 1.  **Clone the repository (if applicable):**
     ```bash
-    git clone [https://github.com/](https://github.com/)[your-github-username]/strong-password-generator.git  # Replace with your repo URL
+    git clone https://github.com/Rudra-4518/strong-password-generator-.git
     cd strong-password-generator
     ```
 
